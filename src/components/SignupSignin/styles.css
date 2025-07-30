@@ -1,0 +1,41 @@
+.navbar{
+    background-color: var(--theme);   
+    padding:0.5rem 1.5rem;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.signup-wrapper {
+  max-width: 600px;
+  margin: 6rem auto 2rem auto;      /* push below navbar */
+  padding: 2rem;
+  box-shadow: var(--shadow-color);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;          /* ✅ stack children vertically */
+  align-items: center;             /* ✅ center horizontally */
+  gap: 1rem;                       /* ✅ spacing between elements */
+}
+
+  
+
+.title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;     
+}
+
+.p-login{
+   text-align: "center";
+   margin: 0;
+   font-weight: 300;
+   font-size: 0.8rem;
+   cursor: "pointer";
+}

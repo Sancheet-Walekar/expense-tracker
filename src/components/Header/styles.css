@@ -1,0 +1,29 @@
+
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  height: 32px;       /* adjust as needed */
+  margin-right: 10px;
+}
+
+.app-title {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.link {
+  opacity: 0.8;
+  cursor: pointer;
+  color: var(--white);
+  margin-right: 44px !important;
+}
+
+.link:hover {
+  opacity: 1;
+  transition: all 0.3s;
+}
