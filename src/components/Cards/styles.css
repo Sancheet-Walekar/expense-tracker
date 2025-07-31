@@ -1,0 +1,40 @@
+.my-card{
+    /* box-shadow: var(--theme);
+    min-width: 300 ;
+    margin-top: 50px !important;
+    padding: 0.2rem !important;
+  font-family: "Montserrat", sans-serif !important; */
+
+    margin-top: 50px !important;
+    box-shadow: var(--theme);
+    margin: 2rem;
+    border-radius: 0.5rem;
+    min-width: 300px;
+    flex: 1,
+}
+
+.my-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap:16px;
+    padding-top:0rem;
+}
+
+.my-card p {
+    margin:0;
+}
+
+.ant-card-head-title{
+    margin: 0rem !important;
+    font-weight: 600;
+}
+
+.with-border {
+  border: 1px solid #d9d9d9; /* default Ant Design border color */
+  border-radius: 8px;
+  padding: 16px;
+}

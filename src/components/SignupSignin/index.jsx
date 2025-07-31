@@ -23,6 +23,8 @@ function SignupSignInComponent() {
   const navigate = useNavigate();
 
 
+
+
   function signupwithEmail() {
     setLoading(true);
     console.log("Name", name);
@@ -70,6 +72,7 @@ function SignupSignInComponent() {
   async function createDoc(user) {
     // Make sure that the doc with the uid doesn't exist
     // Create a doc.
+    setLoading(true);
     if (!user) return;
 
     const userRef = doc(db, "users", user.uid);
@@ -83,20 +86,26 @@ function SignupSignInComponent() {
           createdAt: new Date(),
         });
         toast.success("Doc created!");
+            setLoading(false);
+
       } catch (e) {
           toast.error(e.message);
+                      setLoading(false);
+
       }
     } else {
-      toast.error("User already exists");
+      toast.error("Doc already exists");
+                  setLoading(false);
+
     }
   }
 
     function loginwithEmail() {
       console.log("name", name);
       console.log("password", password);
+      setLoading(true);
 
       if (email != "" && password != "") {
-
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in 
@@ -117,6 +126,8 @@ function SignupSignInComponent() {
       }
       else {
         toast.error("All fields are mandatory");
+        setLoading(false);
+
       }
     }
 
@@ -135,9 +146,9 @@ function SignupSignInComponent() {
 
               <Button disabled={loading} onClick={loginwithEmail} text={loading ? "Loading..." : "Login Using Email and Password"} />
 
-              <p style={{ textAlign: "center", margin: 0 }}>OR</p>
+              {/* <p style={{ textAlign: "center", margin: 0 }}>OR</p> */}
 
-              <Button text={loading ? "Loading..." : "Login Using Google"} blue={true} />
+              {/* <Button text={loading ? "Loading..." : "Login Using Google"} blue={true} /> */}
 
               <p className="p-login" onClick={() => setLoginForm(!loginform)}>Or Don't Have An Account? Click Here</p>
             </form>
@@ -161,9 +172,9 @@ function SignupSignInComponent() {
 
               <Button disabled={loading} onClick={signupwithEmail} text={loading ? "Loading..." : "Signup Using Email and Password"} />
 
-              <p style={{ textAlign: "center", margin: 0 }}>OR</p>
+              {/* <p style={{ textAlign: "center", margin: 0 }}>OR</p> */}
 
-              <Button text={loading ? "Loading..." : "Signup Using Google"} blue={true} />
+              {/* <Button text={loading ? "Loading..." : "Signup Using Google"} blue={true} /> */}
 
               <p className='p-login' onClick={() => setLoginForm(!loginform)}>Or Have An Account Already? Click Here</p>
 

@@ -9,6 +9,7 @@ import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
 
 import { ToastContainer, toast } from 'react-toastify';
+import Cards from './components/Cards'
 
 
 function App() {

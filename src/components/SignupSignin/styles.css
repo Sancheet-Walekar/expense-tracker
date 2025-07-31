@@ -1,7 +1,7 @@
 .navbar{
     background-color: var(--theme);   
     padding:0.5rem 1.5rem;
-    position:fixed;
+    position:absolute;
     top:0;
     left:0;
     width:100%;
@@ -22,7 +22,6 @@
   gap: 1rem;                       /* ✅ spacing between elements */
 }
 
-  
 
 .title {
   font-weight: 500;
