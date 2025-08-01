@@ -80,7 +80,6 @@ function AddIncomeModal({
             <Select.Option value="refund">🔁 Refund</Select.Option>
             <Select.Option value="sidehustle">🚀 Side Hustle</Select.Option>
             <Select.Option value="others">📦 Others</Select.Option>
-            {/* Add more tags here */}
           </Select>
         </Form.Item>
         <Form.Item>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import moment from "moment";
 // import TransactionSearch from "./TransactionSearch";
 import Header from '../components/Header'
@@ -13,11 +12,8 @@ import { addDoc, collection, getDocs, query, Transaction } from "firebase/firest
 // import Loader from "./Loader";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-// import { unparse } from "papaparse";
 import { Modal } from 'antd';
-import TransactionSearch from "../components/TransactionsTable";
 import TransactionTable from "../components/TransactionsTable";
-// import { toast } from 'react-toastify';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -122,23 +118,6 @@ const Dashboard = () => {
     setLoading(false);
   }
 
-  // const balanceConfig = {
-  //   data: balanceData,
-  //   xField: "month",
-  //   yField: "balance",
-  // };
-
-  // const spendingConfig = {
-  //   data: spendingDataArray,
-  //   angleField: "value",
-  //   colorField: "category",
-  // };
-
-  function reset() {
-    console.log("resetting");
-  }
-
-
   function exportToCsv() {
     const csv = unparse(transactions, {
       fields: ["name", "type", "date", "amount", "tag"],
@@ -166,7 +145,6 @@ const Dashboard = () => {
             expenses={expenses}
             showExpenseModal={showExpenseModal}
             showIncomeModal={showIncomeModal}
-
           />
 
           <AddExpenseModal

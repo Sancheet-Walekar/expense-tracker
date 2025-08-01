@@ -52,7 +52,6 @@ function TransactionTable({ transactions }) {
 
     return (
         <>
-        
             <div className="input-flex">
                 <img src={searchImg} width="16" />
                 <input

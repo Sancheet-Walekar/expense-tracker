@@ -1,12 +1,10 @@
-
-
 .logo-section {
   display: flex;
   align-items: center;
 }
 
 .app-logo {
-  height: 32px;       /* adjust as needed */
+  height: 32px;    
   margin-right: 10px;
 }
 

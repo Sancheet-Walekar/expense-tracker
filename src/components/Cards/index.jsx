@@ -4,7 +4,6 @@ import Button from '../Button';
 import "./styles.css";
 import { Row } from 'antd';
 function Cards({ income,expenses,currentBalance,showIncomeModal,showExpenseModal} ) {
-    console.log("Cards component rendered");
     return (
         <>
             <div>
@@ -12,7 +11,7 @@ function Cards({ income,expenses,currentBalance,showIncomeModal,showExpenseModal
                     <Card className="my-card" >
                         <h2>Current Balance</h2>
                         <p>₹ {currentBalance}</p>
-                        <Button text="Reset Balance"></Button>
+                        {/* <Button text="Reset Balance"></Button> */}
                     </Card>
 
                     <Card className="my-card" >

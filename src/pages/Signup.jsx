@@ -5,7 +5,6 @@ function Signup() {
   return (
     <>
     <Header />
-      {/* <div className="wrapper">Signup Page</div> */}
       <SignupSignInComponent />
     </>
   )

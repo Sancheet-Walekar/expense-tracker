@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import "./styles.css";
-import logo from '../../assets/logo_img1.png'; // adjust the path if needed
+import logo from '../../assets/logo_img1.png';
 import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, Link } from 'react-router-dom';

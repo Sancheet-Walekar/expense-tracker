@@ -1,6 +1,6 @@
 form {
-  width: 100%;                     /* ✅ make form full width inside wrapper */
+  width: 100%;             
 }
 .input-wrapper {
-  width: 100%;                     /* ✅ inputs take full width */
+  width: 100%;
 }
