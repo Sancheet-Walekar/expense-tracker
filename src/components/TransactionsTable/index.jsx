@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Select, Table, Input, Radio } from 'antd';
 import searchImg from '../../assets/search.svg';
+import { unparse } from 'papaparse';
 
 function TransactionTable({ transactions }) {
     const { Search } = Input;
@@ -42,6 +43,20 @@ function TransactionTable({ transactions }) {
             item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
             item.type.includes(typeFilter)
     );
+
+  function exportToCsv() {
+    const csv = unparse(transactions, {
+      fields: ["name", "type", "date", "amount", "tag"],
+    });
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "transactions.csv";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
     const sortedTransactions = [...filteredTransactions].sort((a, b) => {
         if (sortKey === "date") {
@@ -116,25 +131,14 @@ function TransactionTable({ transactions }) {
                             marginRight: "48px"
                         }}
                     >
-                        <button className="btn">Export to CSV</button>
-                        <label htmlFor="file-csv" className="btn btn-blue">
-                            Import from CSV
-                        </label>
-                        <input
-                            id="file-csv"
-                            type="file"
-                            accept=".csv"
-                            required
-                            style={{ display: "none" }}
-                        />
+                        <button className="btn" onClick={exportToCsv}>Export to CSV</button>
                     </div>
                 </div>
 
-                {/* ✅ This is the missing Table component */}
                 <Table
                     columns={columns}
                     dataSource={sortedTransactions}
-                    rowKey="id" // make sure your transaction objects have unique `id` field
+                    rowKey="id"
                     pagination={{ pageSize: 5 }}
                 />
             </div>
